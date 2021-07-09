@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="lunchCounter">
     <head>
         <meta charset="utf-8">
-        <title>Hello Coursera</title>
+        <title>Item Counter</title>
     </head>
     <body>
-        <h1>Hello Coursera Studentss</h1>
+        <!--Global Scripts-->
+        <script src='angular.min.js'></script>
+        <script src='app.js'></script>
+        <!--Page Header-->
+        <h1>What Do You Eat For Lunch?</h1>
+        <!--Controller-->
+        <div ng-controller="lunchCounterController">
+            <label for='itemBox'><h3>Type in Items Below:</h6></label>
+            <label for='itemBox'>Note: Use commas to separte items. Empty items are not considered e.g. 1,,3 will be 2 items.</label>
+            <br><br>
+            <!--Input-->
+            <input name='itemBox' type="text" ng-model="items" ng-keydown='noSpace($event)'>
+            <br><br>
+            <button ng-click='displayItemCount();'>Check If Too Much?</button>
+            <br><br>
+            <!--Output-->
+            <div>{{output}}</div>
+        </div>
     </body>
-</html>
+</html> 
