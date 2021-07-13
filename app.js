@@ -55,7 +55,7 @@ function checkIfTooMuch(count)
     if(count==0)
     {
 
-        return "Empty.";
+        return "Please enter data first.";
     
     }
     else if(count<=3)
